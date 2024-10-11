@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Form</title>
+    <link rel="stylesheet"href="style.css">
+
+<style>
+*{
+	box-sizing: border-box;
+}
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        padding: 20px;
+        background-color: powderblue;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	margin: 0;
+}
+ 
+    h1 {
+      color: #333;
+}
+
+    input[type="text"], input[type="email"] {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+}
+
+     input[type="text"], input[type="company"] {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+}
+
+      input[type="text"], input[type="position"] {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+}
+
+      input[type="submit"] {
+      background-color: #4CAF50;
+      borders: 2px solid black;
+      border-radius: 4px;
+      color: white;
+      display: block;
+      font-family: inherit;
+      font-size: 16px;
+      padding: 5px;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+}
+
+.container {
+        padding: 30px 40px;
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+	overflow: hidden;
+	width: 400px;
+	max-width: 100%;
+}
+
+</style>
+</head>
+
+<body>
+<div class="container">
+	<div class="header">
+</div>
+
+<h1 style="text-align:center;background-color:powderblue;border: 2px solid black;">Application Form</h1>
+<form id="contactForm">
+<label for="name">Name:</label>
+<input type="text" placeholder="Juan Dela Cruz" id="name" required>
+<br>
+<label for="company">Company:</label>
+<input type="company" placeholder="ILF Company" id="company" required>
+<br>
+<label for="position">Position:</label>
+<input type="position" placeholder="Sales Manager" id="position" required>
+<br>
+<label for="email">Email:</label>
+<input type="email" placeholder="juandelacruz@gmail.com" id="email" required>
+<br>
+<input type="submit" value="Submit">
+</form>
+<div id="message"></div>
+<script src="script.js"></script>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(event) {event.preventDefault(); // Prevent default form submission
+const name = document.getElementById("name").value;
+const company = document.getElementById("company").value;
+const position = document.getElementById("position").value;
+const email = document.getElementById("email").value;
+
+if (name && email) {
+document.getElementById("message").innerText = "We appreciate your submitted form. We will send you an update once we reviewed your application. Thank you!"
+this.reset(); // Reset the form fields
+} else {
+document.getElementById("message").innerText = "Please fill in all fields.";
+}
+});
+</script>
+
+</body>
+</html>
+
+
+
